@@ -1,0 +1,58 @@
+package cs2assignment4;
+
+import java.util.Arrays;
+
+public class Fleet implements FleetApi{
+private final int FleetSize= 7;//number of ships
+private Ship ship[]=new Ship[FleetSize];//ships of the fleet
+
+
+	Fleet() {
+	for(int i=0; i<FleetSize;i++) {
+		ship[i]=new Ship();
+	}
+}
+
+
+
+	@Override
+	public void deployFleet() {
+		for(int i=1;i<FleetSize;++i) {
+			
+			Location location=new Location();
+			location.pick();
+			ship[i].setLoc(location);
+		}
+	}
+
+	
+
+	@Override
+	public boolean operational() {
+	
+		return false;
+	}
+
+	@Override
+	public boolean isHitNSink(Location location) {
+		
+		return false;
+	}
+
+	@Override
+	public void printFleet() {
+		ship[0].printShip();
+		for(int i=1;i<FleetSize;++i) {
+			System.out.print(", ");
+			ship[i].printShip();
+		}
+		
+	}
+
+	@Override
+	public int check(Location location) {
+		
+		return 0;
+	}
+
+}

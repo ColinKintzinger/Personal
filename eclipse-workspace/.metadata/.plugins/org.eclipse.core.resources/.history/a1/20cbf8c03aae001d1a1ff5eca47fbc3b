@@ -1,0 +1,16 @@
+package cs2assignment4;
+
+public class gameDriver {
+
+	public static void main(String[] args) {
+Location location=new Location();
+Ship ship=new Ship();
+Fleet fleet=new Fleet();
+location.pick();
+location.fire();
+//System.out.println(ship);
+
+
+	}
+
+}

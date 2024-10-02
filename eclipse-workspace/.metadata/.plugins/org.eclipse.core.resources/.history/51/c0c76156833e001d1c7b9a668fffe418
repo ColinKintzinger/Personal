@@ -1,0 +1,14 @@
+//need this to use scanner in program
+import java.util.Scanner;
+public class scanner {
+
+	public static void main(String[] args) {
+		//how to right in a scanner
+		Scanner CSS=new Scanner(Scanner.in);
+		int x;
+		x= CSS.nextInt();
+		System.out.print(x);
+
+	}
+
+}

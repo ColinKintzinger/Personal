@@ -1,0 +1,82 @@
+package cs2assignment4;
+
+public class Ship implements ShipAPI{
+	private Location loc;
+	private boolean sunk;
+	//a constructor to set sunk automatically to false
+	
+	
+	
+	public Ship(Location loc, boolean sunk) {
+		super();
+		this.loc = loc;
+		this.sunk = sunk;
+	}
+	
+	public Ship() {
+		sunk=false;
+		loc=new Location();
+		
+	}
+
+	public Location getLoc() {
+		return loc;
+	}
+	public boolean getSunk() {
+		return sunk;
+	}
+	public void setLoc(Location loc) {
+		this.loc = loc;
+	}
+
+	public void setSunk(boolean sunk) {
+		this.sunk = sunk;
+	}
+	
+;
+	@Override
+	public boolean match(Location location) {
+		return this.loc.getX()==loc.getX() && this.loc.getY()==loc.getY();
+	}
+
+	@Override
+	public boolean isSunk() {
+		
+		return sunk;
+	}
+
+	@Override
+	public void sink() {
+		sunk=true;
+		
+	}
+
+	@Override
+	public void setLocation(Location location) {
+		this.loc=location;
+//		for(int i=1;i<8;++i) {
+//		loc.setX(loc.getX());
+//		loc.setY(loc.getY());
+//		}
+	}
+
+	@Override
+	//allows users to print the locations of the ships and the status of the ship
+	public void printShip() {
+		loc.print();
+		if(isSunk()) {
+		System.out.print("sunk, ");
+		}
+		else {
+			System.out.print("up, ");
+		}
+		
+	}
+
+	@Override
+	public String toString() {
+		printShip();
+		return "" ;
+	}
+
+}

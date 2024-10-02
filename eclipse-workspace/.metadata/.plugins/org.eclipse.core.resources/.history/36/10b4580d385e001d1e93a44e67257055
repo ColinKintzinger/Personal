@@ -1,0 +1,10 @@
+
+public class PersonalCars {
+
+	public static void main(String[] args) {
+
+		String[] brand= {"ford","chevorlet","toyota"};
+		System.out.println(brand[0]);
+	}
+
+}

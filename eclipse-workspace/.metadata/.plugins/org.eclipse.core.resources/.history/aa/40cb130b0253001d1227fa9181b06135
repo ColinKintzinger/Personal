@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class part1 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("enter a value:");
+		int b =sc.nextInt();
+		for (int i = b; 1 >= i; ++i) {
+			for (int c = i; c <= i; ++c) {
+				System.out.print(c);
+
+			}
+			System.out.println();
+		}
+		
+
+	}//end of main
+}//end of class

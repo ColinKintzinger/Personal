@@ -1,0 +1,5 @@
+package cs2assingment5;
+
+public class Email extends Document {
+
+}

@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class application {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		double inches;
+		inches=input.nextDouble();
+		int feet=inches/12;
+		System.out.print(feet);
+		int yards=feet/3;
+		System.out.pint(yards);
+	}
+
+}

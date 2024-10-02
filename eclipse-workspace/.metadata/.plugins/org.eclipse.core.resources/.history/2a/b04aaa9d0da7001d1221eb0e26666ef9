@@ -1,0 +1,14 @@
+package cs2assignment3;
+
+public class Driver {
+public static void products() {
+	Product p=new Product("Toaster",29.95);
+	Product p1=new Product("Hair Dryer",24.95);
+	Product p2= new Product("Car Vaccum",19.99);
+	System.out.println(p,p1,p2);
+}
+	public static void main(String[] args) {
+products();
+	}
+
+}

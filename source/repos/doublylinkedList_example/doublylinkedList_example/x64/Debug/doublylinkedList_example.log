@@ -1,0 +1,3 @@
+﻿  doublylinkedList_example.cpp
+C:\Users\KintzingerColin\source\repos\doublylinkedList_example\doublylinkedList_example\doublylinkedList_example.cpp(308): warning C4715: 'sameInformation<int>': not all control paths return a value
+  doublylinkedList_example.vcxproj -> C:\Users\KintzingerColin\source\repos\doublylinkedList_example\x64\Debug\doublylinkedList_example.exe

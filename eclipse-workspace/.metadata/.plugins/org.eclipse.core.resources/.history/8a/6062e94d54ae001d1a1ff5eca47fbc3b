@@ -1,0 +1,74 @@
+package cs2assignment4;
+
+import java.util.Arrays;
+
+public class Fleet implements FleetApi{
+private final int FleetSize= 7;//number of ships
+private Ship ship[]=new Ship[FleetSize];//ships of the fleet
+
+
+	Fleet() {
+	for(int i=0; i<FleetSize;i++) {
+		ship[i]=new Ship();
+	}
+}
+
+
+
+	@Override
+	public void deployFleet() {
+		for(int i=0;i<FleetSize;++i) {
+			
+			Location location=new Location();
+			location.pick();
+			ship[i].setLoc(location);
+		}
+	}
+
+	
+
+	@Override
+	public boolean operational() {
+		for(int i=0;i<FleetSize;++i) {
+			if(!ship[i].isSunk()) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean isHitNSink(Location location) {
+		int check=check(location);
+		for(int i=0;i<FleetSize;++i) {
+		if(ship[i].match(location)) {
+			
+			ship[i].sink();
+			return true;
+		}
+		}
+		return false;
+	}
+
+	@Override
+	public void printFleet() {
+		
+		ship[0].printShip();
+		for(int i=1;i<FleetSize;++i) {
+			
+			ship[i].printShip();
+		}
+		
+	}
+
+	@Override
+	public int check(Location location) {
+		for(int i=0;i<FleetSize;++i) {
+			if(location.equals( ship[i].getLoc())) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+}

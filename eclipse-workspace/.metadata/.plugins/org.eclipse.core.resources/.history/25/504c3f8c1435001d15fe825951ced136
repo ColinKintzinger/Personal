@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class application {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		double x;
+		double y;
+		double z;
+		x=input.nextDouble();
+		y=input.nextDouble();
+		z=input.nextDouble();
+		double average=x+y+z/3;
+		System.out.print(average);;
+	}
+
+}

@@ -1,0 +1,79 @@
+package cs2assignment4;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Location implements LocationAPI {
+
+	private int x;
+	private char y;
+
+	public Location() {
+		super();
+		this.x = -1;
+		this.y = '*';
+	}
+
+	public Location(int x_, char y_) {
+		super();
+		this.x = x_;
+		this.y = y_;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public char getY() {
+		return y;
+	}
+
+	public void setY(char y) {
+		this.y = y;
+	}
+
+	@Override
+	public void pick() {
+		Random rand = new Random();
+
+		this.x = rand.nextInt(7) + 1;
+		this.y = (char) ('a' + rand.nextInt(7));
+
+	}
+
+	@Override
+	public void fire() {
+		Scanner sc = new Scanner(System.in);
+		boolean test = true;
+		while (test) {
+			System.out.println("enter a letter between [a-g]\n");
+			char ycord = sc.next().charAt(0);
+			if (ycord >= 'a' && ycord <= 'g') {
+				this.y = ycord;
+				test = false;
+			}
+		}
+
+		test = true;
+		while (test) {
+			System.out.println("enter integer between [1-7]\n");
+			int xcord = sc.nextInt();
+			if (xcord >= 1 && xcord <= 7) {
+				this.x = xcord;
+				test = false;
+			}
+		}
+	}
+
+	@Override
+	public void print() {
+
+		System.out.print(this.y + "" + this.x + " ");
+
+	}
+
+}

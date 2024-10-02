@@ -1,0 +1,3 @@
+﻿  impFile.cpp
+C:\Users\KintzingerColin\source\repos\Project6_OldVersion\impFile.cpp(388): warning C4715: 'Inventory::checkID': not all control paths return a value
+  Project6_OldVersion.vcxproj -> C:\Users\KintzingerColin\source\repos\Project6_OldVersion\Debug\Project6_OldVersion.exe

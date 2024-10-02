@@ -1,0 +1,55 @@
+package cs2assingment5;
+
+import java.util.Objects;
+
+public class Email extends Document {
+private String sender;
+private String recipient;
+private String title;
+
+public Email() {
+	super();
+}
+
+public Email(String text) {
+	super(text);
+}
+
+public Email(String text, String sender, String recipient, String title) {
+	super(text);
+	this.sender = sender;
+	this.recipient = recipient;
+	this.title = title;
+}
+
+public String getSender() {
+	return sender;
+}
+public void setSender(String sender) {
+	this.sender = sender;
+}
+public String getRecipient() {
+	return recipient;
+}
+public void setRecipient(String recipient) {
+	this.recipient = recipient;
+}
+public String getTitle() {
+	return title;
+}
+public void setTitle(String title) {
+	this.title = title;
+}
+@Override
+public int hashCode() {
+	final int prime = 31;
+	int result = super.hashCode();
+	result = prime * result + Objects.hash(recipient, sender, title);
+	return result;
+}
+@Override
+public String toString() {
+	return "Email [sender=" + sender + ", recipient=" + recipient + ", title=" + title + "]";
+}
+
+}

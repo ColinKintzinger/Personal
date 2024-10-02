@@ -1,0 +1,99 @@
+//#include "varList.h"
+#ifndef VARLIST_H2
+#define VARLIST_H2
+#include "varList.h"
+using namespace std;
+
+
+template<class T>
+VarList<T>::VarList(){
+	size = 0; 
+	dArray = new T[size];
+}
+
+template<class T>
+int VarList<T>::check(T key){
+	for (int i = 0; i < size; ++i) {
+		if (dArray[i] == key) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+template<class T>
+void VarList<T>::addValue(T value){//allows the user to add a number to the list
+	if (size == 0) {
+		size = 1;
+		dArray = new T[size]; 
+		dArray[size - 1] = value;
+	}
+	else if (check(value) == -1) {
+		size++;
+		T* tmp = new T[size];
+		for (int i = 0; i < (size-1); ++i) {
+			tmp[i] = dArray[i];
+		}
+		tmp[size - 1] = value;
+		delete[] dArray;
+		dArray = tmp;
+	}
+	
+}
+
+template<class T>
+void VarList<T>::removeValue(T value) {//allows the user to remove a value from the list
+	int j = check(value);
+	if (j > -1) {
+		size--;
+		T* tmp = new T[size];
+		for (int i = 0; i < j; ++i) {
+			tmp[i] = dArray[i]; 
+		}
+		for (int k = j + 1; k < size; ++k) {
+			tmp[k-1] = dArray[k];
+		}
+		tmp[size-1] = dArray[size];
+		delete[] dArray;
+		dArray = tmp;
+	}
+		
+}
+
+
+template<class T>
+void VarList<T>::printList(){
+	for (int i = 0; i < size; ++i) {
+		cout << dArray[i]<<"   ";
+	}
+}
+
+//rule of three
+template<class T>
+inline VarList<T>::VarList(const VarList<T>& org){//copy constructor
+	dArray = new T[org.size];
+	size = org.size;
+	for (int i = 0; i < size; ++i) {
+		dArray[i] = org.dArray[i];
+	}
+}
+
+template<class T>
+VarList<T>& VarList<T>::operator=(const VarList<T>& rhs){//operator overloading
+	if (this != &rhs) {
+		size = rhs.size; 
+		delete[] dArray;
+		dArray = new T[size];
+		for (int i = 0; i < size; ++i) {
+			dArray[i] = rhs.dArray[i]; 
+		}
+	}
+	
+	return *this;
+}
+
+template<class T>
+VarList<T>::~VarList(){//deconstructor
+	delete[] dArray;
+}
+#endif

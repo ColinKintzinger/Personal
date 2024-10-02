@@ -1,0 +1,22 @@
+package cs2assignment3;
+
+public class Product {
+private String description;
+private double price;
+public Product(String description, double price) {
+	super();
+	this.description = description;
+	this.price = price;
+}
+public String getDescription() {
+	return description;
+}
+public double getPrice() {
+	return price;
+}
+@Override
+public String toString() {
+	return "Product [description=" + description + ", price=" + price + "]";
+}
+
+}

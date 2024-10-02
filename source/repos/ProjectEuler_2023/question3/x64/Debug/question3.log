@@ -1,0 +1,3 @@
+﻿  question3.cpp
+C:\Users\KintzingerColin\source\repos\ProjectEuler_2023\question3\question3.cpp(17,9): warning C4101: 'y': unreferenced local variable
+  question3.vcxproj -> C:\Users\KintzingerColin\source\repos\ProjectEuler_2023\x64\Debug\question3.exe

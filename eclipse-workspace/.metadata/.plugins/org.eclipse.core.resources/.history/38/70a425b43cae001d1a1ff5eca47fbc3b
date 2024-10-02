@@ -1,0 +1,26 @@
+package cs2assignment4;
+
+public class gameDriver {
+
+	public static void main(String[] args) {
+		//testing location class
+Location location=new Location();
+location.print();
+location.pick();
+location.print();
+location.fire();
+location.print();
+System.out.println("\n------ ending location test --------");
+
+		//ship testing
+Ship ship=new Ship();
+ship.printShip();
+
+Ship ship1=new Ship(location,false);
+ship1.printShip();
+
+
+
+	}
+
+}

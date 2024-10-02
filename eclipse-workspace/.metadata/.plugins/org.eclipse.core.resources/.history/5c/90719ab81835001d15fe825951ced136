@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class application {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		int x;
+		int y;
+		x=input.nextInt();
+		y=input.nextInt();
+		int expo=x^y;
+		System.out.print(expo);
+	}
+
+}
