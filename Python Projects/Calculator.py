@@ -2,11 +2,35 @@ from tkinter import *
 from tkinter import ttk
 
 root = Tk()
-
+root.title("Calculator")
 content = ttk.Frame(root)
+display = ttk.Entry(content, state='readonly', justify='right')
 frame = ttk.Frame(content, borderwidth=5, relief="sunken", width=200, height=100)
 namelbl = ttk.Label(content, text="Name")
 name = ttk.Entry(content)
 
+one = ttk.Button(content, text="1")
+two = ttk.Button(content, text="2")
+three = ttk.Button(content, text="3")
+four = ttk.Button(content, text="4")
+five = ttk.Button(content, text="5")
+six = ttk.Button(content, text="6")
+seven = ttk.Button(content, text="7")
+eight = ttk.Button(content, text="8")
+nine = ttk.Button(content, text="9")
+zero = ttk.Button(content, text="0")
+
+content.grid(column=0, row=0)
+display.grid(column=0, row=0, columnspan=3, sticky=(N, W, E, S))
+one.grid(column=0, row=2)
+two.grid(column=1, row=2)
+three.grid(column=2, row=2)
+four.grid(column=0, row=3)
+five.grid(column=1, row=3)
+six.grid(column=2, row=3)
+seven.grid(column=0, row=4)
+eight.grid(column=1, row=4)
+nine.grid(column=2, row=4)
+zero.grid(column=1, row=5)
 
 root.mainloop()
