@@ -41,22 +41,24 @@ arrays.append(room(array6, 2, 3))
 arrays.append(room(array7, 3, 1))
 arrays.append(room(array8, 3, 2))
 arrays.append(room(array9, 3, 3))
-
+i = 0
 # Function to generate random numbers
-def randon_array():
-
-    num = random.randint(0, len(arrays)-1)
-    select = arrays[num]
-    print(select.exit)
-    rooms.append(select)
-    for i in range(0,20):
-        num = random.randint(0, len(arrays)-1)
-        select = arrays[num]
-        if select.entrance == rooms[len(rooms)-1].exit:
+def random_array():
+    for i in range(0, 9):
+        if len(rooms) == 0 :
+            num = random.randint(0, len(arrays)-1)
+            select = arrays[num]
+            print(select.exit)
             rooms.append(select)
+        elif i < 10:
+            while True:
+                num = random.randint(0, len(arrays)-1)
+                select = arrays[num]
+                if select.entrance == rooms[len(rooms)-1].exit:
+                    rooms.append(select)
+                    break
         else:
-            i = i - 1
-
+            return
 
 
     # for i in range (0,9):
@@ -74,7 +76,7 @@ def print_matrix(matrix, name):
         print(" ".join(map(str, row)))
 
 
-randon_array()
+random_array()
 for idx, room in enumerate(rooms, len(rooms)):
     print_matrix(room.arrayData, f"Room {idx}")
 
